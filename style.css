@@ -27,7 +27,7 @@
 }
 
 .text_gray,.lib_sec5>p,.lib_sec5>i,.lib_sec4{
-    color: rgb(169, 169, 169) ;
+    color: rgb(169, 169, 169);
 }
 
 .lib_sec5>p:hover,.lib_sec5>i:hover{
@@ -46,6 +46,7 @@
 
 .sidebar_1>div>i,.sidebar_1>div>p{
     padding-left: 20px;
+    cursor: pointer;
 }
 
 .sidebar_1>div>p:hover{
@@ -67,6 +68,7 @@
     padding: 0px 0px 0px 8px;
     background-color: rgb(20, 20, 20);
     border-radius: 0px 0px 8px 8px;
+    cursor: pointer;
 }
 
 .lib_sec4{
@@ -74,12 +76,17 @@
     padding:6px;
 }
 
-::-webkit-scrollbar{
+.sidebar_2b::-webkit-scrollbar,.main_section_2::-webkit-scrollbar{
     width: 12px;
 }
 
 ::-webkit-scrollbar-thumb{
     background-color: rgba(255, 255, 255, 0.297);
+}
+
+body::-webkit-scrollbar{
+    background-color: rgb(20, 20, 20);
+    width: 14px;
 }
 
 .flex_prop{
@@ -109,6 +116,7 @@
 .lib_sec1{
     width: 60%;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .lib_sec2{
@@ -118,6 +126,7 @@
     width: 28%;
     background-color: transparent;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .lib_sec2>i{
@@ -230,7 +239,7 @@
     padding:5px 14px 20px 14px;
 }
 
-.main_sub_2>p:nth-child(2),.main_sub_2>p:last-child,.main_sub_2>p:first-child,.sidebar_2a>p{
+.main_sub_2>p:nth-child(2),.main_sub_2>p:last-child,.main_sub_2>p:first-child,.sidebar_2a>p,.icon{
     display: flex;
     align-items: center;
     font-size: 14px;
@@ -238,6 +247,10 @@
     padding: 7px 14px;
     border-radius: 30px;
     cursor: pointer;
+}
+
+.icon:hover{
+    background-color: rgb(80, 80, 80);
 }
 
 .main_sub_2>p:first-child{
@@ -306,7 +319,7 @@
 }
 
 .artist_word{
-    color: rgb(169, 169, 169) ;;
+    color: rgb(169, 169, 169);
     font-size: 14px;
     padding: 0px 12px 12px 12px;
 }
@@ -325,8 +338,23 @@
     background-color: rgb(20, 20, 20);
 }
 
+.footer_sub>h3{
+    font-size: 17px;
+}
+
+.footer_sub>p{
+    color: rgb(169, 169, 169);
+    font-size: 16px;
+}
+
+.footer_sub>p:hover{
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .icons{
-    width: 15%;
+    width: 17%;
 }
 
 .icon{
@@ -336,7 +364,7 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    background-color: rgb(20, 20, 20);
+    /* background-color: rgb(0, 0, 0); */
 }
 
 .icon_size{
@@ -389,9 +417,13 @@
     font-size: 14px;
 }
 
+.footer_2a>p{
+    color: rgb(169, 169, 169);
+}
+
 .footer_2a>p:hover{
+    color: white;
     cursor: pointer;
-    color: red;
 }
 
 .footer_2b{
@@ -428,6 +460,7 @@
 .song_name{
     font-size: 14px;
     padding: 2px;
+    cursor: pointer;
 }
 
 .song_name:hover{
@@ -438,6 +471,7 @@
     font-size: 12px;
     color: rgb(168, 166, 166);
     padding: 2px;
+    cursor: pointer;
 }
 
 .song_artists>span{
@@ -481,6 +515,8 @@
     width: 100%;
     background-color: gray;
     margin: 10px;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
 .volume{
@@ -556,6 +592,20 @@
 }
 
 @media screen and (max-width: 850px) {
+    .main_section_2{
+        overflow-x: hidden;
+    }
+
+    .footer_1{
+        padding-left: 0px;
+        flex-wrap: wrap;
+    }
+
+    .icons{
+        width: 25%;
+        padding: 10px;
+    }
+
     .main_sub_1,.main_footer{
         display: none;
     }
@@ -570,14 +620,26 @@
 
     .main_sub_2{
         width: 35%;
+        padding-top: 20px;
+    }
+
+    .main_section_2{
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+        margin: 0px;
+        
+    }
+
+    .nav{
+        background-color: black;
+        width: 100vw;
+        height: 10vh;
+        margin: 0px;
     }
 }
 
 @media screen and (max-width: 650px) {
-    .footer_1{
-        flex-wrap: wrap;
-    }
-
     .main_sub_2{
         width: 60% !important;
     }
@@ -591,17 +653,14 @@
     .main_sub_2>p:first-child{
         background-color: rgb(19, 152, 48);
     }
-
 }
-
-/* @media screen and (max-height: 600px) {
-    .sidebar_1{
-        height: 20vh;
-    }
-} */
 
 @media screen and (max-width: 460px) {
     .footer_1{
+        display: none;
+    }
+
+    ::-webkit-scrollbar{
         display: none;
     }
 }
